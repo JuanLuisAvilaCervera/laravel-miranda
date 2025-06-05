@@ -48,11 +48,8 @@ class User extends Authenticatable
     }
 
     public function activity(): HasMany
-
     {
-
         return $this->hasMany(Activity::class);
-
     }
 
     public function contact(): HasMany

@@ -10,11 +10,8 @@ class Activity extends Model
     protected $primaryKey= 'id';
     protected $fillable = ['datetime' , 'paid' , 'notes' , 'satisfaction', 'type' , 'user_id'];
     public function user(): BelongsTo
-
     {
-
         return $this->belongsTo(User::class);
-
     }
     
 }

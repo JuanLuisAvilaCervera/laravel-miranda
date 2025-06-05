@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('booking', function (Blueprint $table) {
+        Schema::create('contact', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date('order_date');
-            $table->date('check_in_date');
-            $table->date('check_out_date');
-            $table->enum('status', ['In Progress' , 'Check in' , 'Check Out']);
-            $table->string('special_request');
-            $table->foreignId('room_id')->constrained(
-                table: 'room', indexName: 'room_id'
-            );
+            $table->date('comment_date');
+            $table->string('subject');
+            $table->string('comment');
+            $table->boolean('archived');
             $table->foreignId('user_id')->constrained(
                 table: 'users', indexName: 'user_id'
             )->nullable();
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('booking');
+        Schema::dropIfExists('contact');
     }
 };

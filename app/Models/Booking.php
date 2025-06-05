@@ -13,18 +13,12 @@ class Booking extends Model
 
 
     public function room(): BelongsTo
-
     {
-
         return $this->belongsTo(Room::class);
-
     }
 
     public function client(): BelongsTo
-
     {
-
         return $this->belongsTo(Client::class);
-
     }
 }

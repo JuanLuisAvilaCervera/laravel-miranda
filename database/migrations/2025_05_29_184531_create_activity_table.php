@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('user_id')->constrained(
-                table: 'users', indexName: 'posts_user_id'
+                table: 'users', indexName: 'user_id'
             )->nullable();
             $table->date('datetime');
             $table->boolean('paid');
