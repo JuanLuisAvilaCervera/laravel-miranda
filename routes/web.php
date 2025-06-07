@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Resource;
+use App\Http\Controllers\RoomController;
+
 
 Route::resource('resources', Resource::class);
 
@@ -11,8 +13,12 @@ Route::get('/', function () {
 });
 
 Route::get('/activity' , [Resource::class , 'index']);
-Route::get('/activity/create', [Resource::class, 'create']);
-Route::get('/activity/delete/{id}', [Resource::class, 'destroy']);
+Route::get('/activity/create' , [Resource::class , 'create']);
+Route::post('/activity', [Resource::class, 'store']);
+Route::delete('/activity/{id}', [Resource::class, 'destroy']);
+
+Route::get('/rooms' , [RoomController::class, 'index']);
+Route::get('/rooms/{id}' , [RoomController::class , 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

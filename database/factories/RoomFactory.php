@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Room;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Room>
@@ -11,6 +13,7 @@ class RoomFactory extends Factory
 {
 
     protected $model = Room::class;
+     
 
     /**
      * Define the model's default state.
@@ -20,12 +23,13 @@ class RoomFactory extends Factory
     public function definition(): array
     {
         return [
-            'room_number' => $faker->randomNumber(3,true),
-            'description' =>  $faker->sentence(15),
-            'offer' => $faker->boolean() ,
-            'price' => $faker-> randomFloat(2, 10 , 100),
-            'discount' => $faker-> randomFloat(2, 0 , 1) ,
-            'cancellation_policy' => $faker-> paragraph(2)
+            'room_number' => fake()->randomNumber(3,true),
+            'room_type' => fake()->randomElement(['Single' , 'Double' , 'Double Superior' , 'Suite']),
+            'description' =>  fake()->sentence(15),
+            'offer' => fake()->boolean() ,
+            'price' => fake()-> randomFloat(2, 10 , 100),
+            'discount' => fake()-> randomFloat(2, 0 , 1) ,
+            'cancellation_policy' => fake()-> paragraph(2)
         ];
     }
 }

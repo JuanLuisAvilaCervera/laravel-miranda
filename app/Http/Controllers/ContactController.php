@@ -20,7 +20,14 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        $contact = Contact::create([
+            'comment_date' => '2025-07-12',
+            'subject' => "true",
+            'comment' => 'asdfasdf',
+            'archived' => false
+        ]);
+
+        return $resource;
     }
 
     /**
@@ -28,9 +35,7 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        return view (
-            'contact' , ['contact' => Contact::findOrFail($id)]
-        );
+        
     }
 
     /**
@@ -38,7 +43,9 @@ class ContactController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view (
+            'contact' , ['contact' => Contact::findOrFail($id)]
+        );
     }
 
     /**

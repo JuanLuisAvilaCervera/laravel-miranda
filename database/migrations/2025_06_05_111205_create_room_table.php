@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->bigInteger('room_number');
+            $table->enum('room_type' , ['Single' , 'Double' , 'Double Superior' , 'Suite']);
             $table->string('description');
             $table->boolean('offer');
             $table->float('price');

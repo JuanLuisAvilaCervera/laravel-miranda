@@ -19,7 +19,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -27,7 +27,15 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $booking = Booking::create([
+            'order_date' => $request->order_date,
+            'check_in_date' => $request->check_in_date,
+            'check_out_date' => $request->check_out_date,
+            'status' => $request->status,
+            'special_request' => $requst->special_request
+        ]);
+
+        return $booking;
     }
 
     /**

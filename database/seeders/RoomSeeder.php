@@ -1,11 +1,15 @@
 <?php
 
 namespace Database\Seeders;
-namespace App\Models\Room;
+use App\Models\Room;
+use Database\Factories\RoomFactory;
 
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
 
 
 
