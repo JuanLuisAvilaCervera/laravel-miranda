@@ -9,7 +9,7 @@ use App\Http\Controllers\RoomController;
 Route::resource('resources', Resource::class);
 
 Route::get('/', function () {
-    return view('welcome' , ['name' => 'Samantha']);
+    return view('home');
 });
 
 Route::get('/activity' , [Resource::class , 'index']);
