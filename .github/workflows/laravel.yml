@@ -14,10 +14,6 @@ jobs:
       with:
         php-version: '8.0'
     - uses: actions/checkout@v4
-    - name: Check directories
-      run: ls -a
-    - name: Move to directory
-      run: cd /var/www/laravel-miranda
     - name: Pull from repository
       run: git pull
     - name: Copy .env
